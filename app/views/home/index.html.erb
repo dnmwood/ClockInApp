@@ -10,7 +10,16 @@
       <%= button_to "Sign Up Here!", new_user_registration_path, class: "log-btn sign-up", method: :get %>
 
     <% else %>
-    <!-- Present Main Application -->
+      <% if !current_user.clocked_in %>
+        <%= render 'new' %>
+      <% else %>
+        <%= render 'clock_out' %>
+      <% end %>
+
+      <% if current_user.shifts.any? && !current_user.clocked_in  %>
+        <%= render 'table' %>
+      <% end %>
+
     <% end %>
   </div>
 

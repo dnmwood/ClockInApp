@@ -2,8 +2,8 @@
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
 
-$primary-color: #4CAF55;
-$secondary-color: blue;
+$primary-color: rgb(61,185,197);
+$secondary-color: rgb(254,204,67);
 
 // Containers
 .main-container {
@@ -27,6 +27,31 @@ $secondary-color: blue;
   float: right;
   color: white;
 }
+
+.table-container {
+  text-align: center;
+  table {
+    width: 100%;
+    border-collapse: collapse;
+    border-spacing: 0;
+    tr {
+    }
+    th {
+      background: $secondary-color;
+      color: black;
+      font-size: 0.95em;
+      // font-weight: bold;
+    }
+    td {
+      background: #FAFAFA;
+      text-align: center;
+      font-size: 0.9em;
+    }
+    td, th { border: 1px solid #CCC; height: 30px; font-family: 'Noto Sans', sans-serif; }
+  }
+}
+
+
 
 // Texts, Headers & Font
 h1, h2, {
@@ -53,6 +78,10 @@ h1, h2, {
   }
 }
 
+.table-header {
+  margin-top: 3.5em;
+}
+
 // Buttons!
 
 .log-btn {
@@ -66,4 +95,12 @@ h1, h2, {
 }
 .login-btn {
   // background-color: $secondary-color;
+}
+.clock-in-btn {
+  font-size: 30px;
+  color: white;
+  border-radius: 30px;
+  width: 200px;
+  padding: 13px 16px;
+  background-color: $primary-color;
 }

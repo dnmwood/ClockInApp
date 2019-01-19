@@ -1,0 +1,7 @@
+<div class="container">
+  <% if current_user.shifts.any? %>
+    <% time_clocked_in = current_user.shifts.all.last.time_in %>
+    <h2>Clocked in at: <%= time_clocked_in.strftime("%I:%M %p") %> </h2>
+    <%= button_to "Clock out", clock_out_path, class: "clock-in-btn", method: :get %>
+  <% end %>
+</div>

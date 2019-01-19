@@ -1,0 +1,4 @@
+<div class="container">
+  <h1>Hello, <%= current_user.email %></h1>
+  <%= button_to "Clock in", shifts_path, class: "clock-in-btn", method: :create %>
+</div>
