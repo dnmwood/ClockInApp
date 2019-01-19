@@ -3,12 +3,35 @@
   <head>
     <title>ClockInApp</title>
     <%= csrf_meta_tags %>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
 
     <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
     <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
+    <link href="https://fonts.googleapis.com/css?family=Merriweather|Noto+Sans" rel="stylesheet">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.6.3/css/all.css" integrity="sha384-UHRtZLI+pbxtHCWp1t77Bi1L4ZtiqrqD80Kn4Z8NTSRyMA2Fd33n5dQ8lWUE00s/" crossorigin="anonymous">
   </head>
 
   <body>
-    <%= yield %>
+    <div class="navbar">
+      <div class="nav-links"><p>
+        <% if user_signed_in? %>
+          Logged in as <strong><%= current_user.email %></strong>
+          <%= link_to 'Edit profile', edit_user_registration_path, :class => 'nav-link' %>
+          <%= link_to "Logout", destroy_user_session_path, method: :delete, :class => 'nav-link'  %>
+        <% else %>
+          <%= link_to "Sign up", new_user_registration_path, :class => 'nav-link'  %>
+          <%= link_to "Login", new_user_session_path, :class => 'nav-link'  %>
+        <% end %>
+        </p></div>
+        <% if notice %>
+          <p class="alert alert-success"><%= notice %></p>
+        <% end %>
+        <% if alert %>
+          <p class="alert alert-danger"><%= alert %></p>
+        <% end %>
+    </div>
+    <div class="main-container">
+      <%= yield %>
+    </div>
   </body>
 </html>

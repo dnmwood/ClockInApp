@@ -1,0 +1,17 @@
+<section id="home-page">
+
+  <div class="container">
+    <!-- New User Registration -->
+    <% if !user_signed_in? %>
+      <h1 class="header">Welcome to
+        <span class="header-text">CL<i class="far fa-clock"></i>CKIN</span>
+      </h1>
+      <h2 class="not-signed-up">Not signed up yet?</h2>
+      <%= button_to "Sign Up Here!", new_user_registration_path, class: "log-btn sign-up", method: :get %>
+
+    <% else %>
+    <!-- Present Main Application -->
+    <% end %>
+  </div>
+
+</section>

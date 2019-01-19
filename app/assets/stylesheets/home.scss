@@ -1,0 +1,69 @@
+// Place all the styles related to the home controller here.
+// They will automatically be included in application.css.
+// You can use Sass (SCSS) here: http://sass-lang.com/
+
+$primary-color: #4CAF55;
+$secondary-color: blue;
+
+// Containers
+.main-container {
+  width: 100%;
+  text-align: center;
+  margin: auto;
+  margin-top: 12.5em;
+}
+
+.navbar {
+  overflow: hidden;
+  background-color: $primary-color;
+  height: 4.5em;
+  position: fixed; /* Set the navbar to fixed position */
+  top: 0; /* Position the navbar at the top of the page */
+  width: 100%; /* Full width */
+  left: 0;
+}
+
+.navbar a {
+  float: right;
+  color: white;
+}
+
+// Texts, Headers & Font
+h1, h2, {
+  font-family: 'Noto Sans', sans-serif;
+}
+.header {
+  .header-text {
+    font-size: 35px;
+    .fa-clock {
+      font-size: 31px;
+    }
+  }
+}
+.not-signed-up {
+  margin-top: 4em;
+}
+.nav-links{
+  margin-right: 15px;
+  .nav-link {
+    color: white;
+    padding: 7px 8px;
+    font-family: 'Noto Sans', sans-serif;
+    text-decoration: none;
+  }
+}
+
+// Buttons!
+
+.log-btn {
+  color: white;
+  border-radius: 30px;
+  width: 100px;
+  padding: 13px 16px;
+}
+.sign-up {
+  background-color: $primary-color;
+}
+.login-btn {
+  // background-color: $secondary-color;
+}
