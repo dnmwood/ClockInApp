@@ -7,15 +7,15 @@
       <th>Shift Duration:</th>
     </tr>
     <% current_user.shifts.each do |shift| %>
-    <tr class="table-row">
-      <td class="table-col"><%= shift.time_in.strftime("%I:%M %p") %></td>
+    <tr>
+      <td><%= shift.time_in.strftime("%I:%M %p") %></td>
       <% if shift.time_out.nil? %>
-        <td class="table-col">Still active</td>
-        <td class="table-col"> - </td>
+        <td>Still active</td>
+        <td> - </td>
       <% else %>
-        <td class="table-col"><%= shift.time_out.strftime("%I:%M %p") %></td>
+        <td><%= shift.time_out.strftime("%I:%M %p") %></td>
         <% duration = (shift.time_out - shift.time_in).to_i %>
-        <td class="table-col"><%= Time.at(duration).utc.strftime("%H:%M:%S") %></td>
+        <td><%= Time.at(duration).utc.strftime("%H:%M:%S") %></td>
       <% end %>
     </tr>
   <% end %>

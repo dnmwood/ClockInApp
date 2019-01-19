@@ -10,6 +10,7 @@ end
 gem 'rails', '~> 5.1.6'
 # Use postgres as the database for Active Record
 gem 'pg'
+gem 'sqlite3'
 # Use Puma as the app server
 gem 'puma', '~> 3.7'
 # User Authentication

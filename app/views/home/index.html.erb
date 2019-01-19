@@ -1,5 +1,4 @@
 <section id="home-page">
-
   <div class="container">
     <!-- New User Registration -->
     <% if !user_signed_in? %>
@@ -9,18 +8,19 @@
       <h2 class="not-signed-up">Not signed up yet?</h2>
       <%= button_to "Sign Up Here!", new_user_registration_path, class: "log-btn sign-up", method: :get %>
 
+    <!-- Main application -->
     <% else %>
       <% if !current_user.clocked_in %>
         <%= render 'new' %>
       <% else %>
         <%= render 'clock_out' %>
       <% end %>
-
+      <!-- We're showing login information only when the user has
+      logged existing shifts, and when the user is clocked out -->
       <% if current_user.shifts.any? && !current_user.clocked_in  %>
         <%= render 'table' %>
       <% end %>
 
     <% end %>
   </div>
-
 </section>

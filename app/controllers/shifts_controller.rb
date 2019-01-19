@@ -8,14 +8,17 @@ class ShiftsController < ApplicationController
   end
 
   def create
+    # Note: this is set to EST, would be useful with more time to
+    # set login-time to the Users current timezone.
     @shift = Shift.new(
       user_id: current_user.id,
-      # Note: this is set to EST, would be useful with more time to
-      # set login-time to the Users current timezone.
       time_in: Time.now.in_time_zone('Eastern Time (US & Canada)')
       )
+    start_shift(@shift)
+  end
 
-    if @shift.save
+  def start_shift(shift)
+    if shift.save
       current_user.clocked_in = true
       current_user.save
       redirect_to root_url
@@ -26,10 +29,14 @@ class ShiftsController < ApplicationController
   end
 
   def clock_out
-    @shift = current_user.shifts.all.last
     # Note: Same as mentioned on line 13
+    @shift = current_user.shifts.all.last
     @shift.time_out = Time.now.in_time_zone('Eastern Time (US & Canada)')
-    if @shift.save
+    end_shift(@shift)
+  end
+
+  def end_shift(shift)
+    if shift.save
       current_user.clocked_in = false
       current_user.save
       redirect_to root_url
@@ -37,5 +44,4 @@ class ShiftsController < ApplicationController
       flash[:alert] = "Unable to clockout."
     end
   end
-
 end
