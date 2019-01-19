@@ -1,24 +1,13 @@
 # README
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+A test application for clocking users in & out.
 
-Things you may want to cover:
+Using the application:
 
-* Ruby version
+* Sign up or Login with an email account
 
-* System dependencies
+* Clock in
 
-* Configuration
+* Clock out!
 
-* Database creation
-
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
+Keep track of your clock-in times and shift duration.
